@@ -1,0 +1,773 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>readme</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1
+      id="modelling-music-context-via-multi-task-learning-and-stateful-music-generation"
+    >
+      Modelling Music Context via Multi-Task Learning and Stateful Music
+      Generation
+    </h1>
+
+    <table>
+      <colgroup>
+        <col style="width: 7%" />
+        <col style="width: 29%" />
+        <col style="width: 32%" />
+        <col style="width: 30%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th style="text-align: left">Seed</th>
+          <th style="text-align: left">Explanation</th>
+          <th style="text-align: left">Baseline</th>
+          <th style="text-align: left">Ours</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td style="text-align: left">
+            <code>bach.arp</code>
+            <audio src="./audio/test_seed_bach_arp.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            Baroque, Fast Triad Arpegio with Leaping Intervals
+            <br /><em>Prelude in B-flat Major (BWV 866) - J.S. Bach </em>
+          </td>
+          <td style="text-align: left">
+            <audio src="./audio/gen_bach.arp_Baseline_0.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_1.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_2.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_3.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_4.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_5.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_6.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_7.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_8.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_9.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_10.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_11.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_12.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_13.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_14.mp3" controls></audio>
+            <audio src="./audio/gen_bach.arp_Baseline_15.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_0.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_1.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_2.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_3.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_4.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_5.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_6.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_7.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_8.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_9.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_10.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_11.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_12.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_13.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_14.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bach.arp_DescriptorSystem_15.mp3"
+              controls
+            ></audio>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align: left">
+            <code>brahms</code>
+            <audio src="./audio/test_seed_brahms.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            Brahms, Tonal, Classical <br /><em
+              >Zwei Rhapsodien Für Klavier - Johannes Brahms Op. 79 No. 1</em
+            >
+          </td>
+          <td style="text-align: left">
+            <audio src="./audio/gen_brahms_Baseline_0.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_1.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_2.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_3.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_4.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_5.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_6.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_7.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_8.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_9.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_10.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_11.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_12.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_13.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_14.mp3" controls></audio>
+            <audio src="./audio/gen_brahms_Baseline_15.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_0.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_1.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_2.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_3.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_4.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_5.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_6.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_7.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_8.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_9.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_10.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_11.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_12.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_13.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_14.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_brahms_DescriptorSystem_15.mp3"
+              controls
+            ></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left">
+            <code>hall</code>
+            <audio src="./audio/test_seed_hall.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            Grieg, Chromatic, Classical
+            <br /><em>In the Hall of the Mountain King - Edvard Grieg</em>
+          </td>
+          <td style="text-align: left">
+            <audio src="./audio/gen_hall_Baseline_0.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_1.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_2.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_3.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_4.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_5.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_6.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_7.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_8.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_9.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_10.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_11.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_12.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_13.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_14.mp3" controls></audio>
+            <audio src="./audio/gen_hall_Baseline_15.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_0.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_1.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_2.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_3.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_4.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_5.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_6.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_7.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_8.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_9.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_10.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_11.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_12.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_13.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_14.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_hall_DescriptorSystem_15.mp3"
+              controls
+            ></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left">
+            <code>synco</code>
+            <audio src="./audio/test_seed_synco.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            Funky Bass Groove with Strong Syncopation
+            <br />
+            <em>Motif Composed By the Authors</em>
+          </td>
+          <td style="text-align: left">
+            <audio src="./audio/gen_synco_Baseline_0.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_1.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_2.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_3.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_4.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_5.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_6.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_7.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_8.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_9.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_10.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_11.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_12.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_13.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_14.mp3" controls></audio>
+            <audio src="./audio/gen_synco_Baseline_15.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_0.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_1.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_2.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_3.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_4.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_5.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_6.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_7.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_8.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_9.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_10.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_11.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_12.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_13.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_14.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco_DescriptorSystem_15.mp3"
+              controls
+            ></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left">
+            <code>synco.jazz</code>
+            <audio src="./audio/test_seed_synco_chick.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            More complicated syncopation from a jazz standard
+            <br /><em> Matrix - Chick Corea</em>
+          </td>
+          <td style="text-align: left">
+            <audio
+              src="./audio/gen_synco.chick_Baseline_0.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_1.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_2.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_3.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_4.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_5.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_6.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_7.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_8.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_9.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_10.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_11.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_12.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_13.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_14.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_Baseline_15.mp3"
+              controls
+            ></audio>
+          </td>
+          <td style="text-align: left">
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_0.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_1.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_2.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_3.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_4.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_5.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_6.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_7.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_8.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_9.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_10.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_11.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_12.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_13.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_14.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_synco.chick_DescriptorSystem_15.mp3"
+              controls
+            ></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left">
+            <code>waltz.folk</code>
+            <audio src="./audio/test_seed_waltz_folk.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            A 3/4 folk song outside the dataset
+
+            <br />
+            <em>Akatombo - Kōsaku Yamada</em>
+          </td>
+          <td style="text-align: left">
+            <audio src="./audio/gen_waltz.folk_Baseline_0.mp3" controls></audio>
+            <audio src="./audio/gen_waltz.folk_Baseline_1.mp3" controls></audio>
+            <audio src="./audio/gen_waltz.folk_Baseline_2.mp3" controls></audio>
+            <audio src="./audio/gen_waltz.folk_Baseline_3.mp3" controls></audio>
+            <audio src="./audio/gen_waltz.folk_Baseline_4.mp3" controls></audio>
+            <audio src="./audio/gen_waltz.folk_Baseline_5.mp3" controls></audio>
+            <audio src="./audio/gen_waltz.folk_Baseline_6.mp3" controls></audio>
+            <audio src="./audio/gen_waltz.folk_Baseline_7.mp3" controls></audio>
+            <audio src="./audio/gen_waltz.folk_Baseline_8.mp3" controls></audio>
+            <audio src="./audio/gen_waltz.folk_Baseline_9.mp3" controls></audio>
+            <audio
+              src="./audio/gen_waltz.folk_Baseline_10.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_Baseline_11.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_Baseline_12.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_Baseline_13.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_Baseline_14.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_Baseline_15.mp3"
+              controls
+            ></audio>
+          </td>
+          <td style="text-align: left">
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_0.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_1.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_2.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_3.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_4.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_5.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_6.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_7.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_8.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_9.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_10.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_11.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_12.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_13.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_14.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_waltz.folk_DescriptorSystem_15.mp3"
+              controls
+            ></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left">
+            <code>bop</code>
+            <audio src="./audio/test_seed_bop.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            A.chick bebop standard featuring melodic minor mode
+            <br />
+            <em>Conception - George Shearing</em>
+          </td>
+          <td style="text-align: left">
+            <audio src="./audio/gen_bop_Baseline_0.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_1.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_2.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_3.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_4.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_5.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_6.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_7.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_8.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_9.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_10.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_11.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_12.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_13.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_14.mp3" controls></audio>
+            <audio src="./audio/gen_bop_Baseline_15.mp3" controls></audio>
+          </td>
+          <td style="text-align: left">
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_0.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_1.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_2.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_3.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_4.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_5.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_6.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_7.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_8.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_9.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_10.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_11.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_12.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_13.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_14.mp3"
+              controls
+            ></audio>
+            <audio
+              src="./audio/gen_bop_DescriptorSystem_15.mp3"
+              controls
+            ></audio>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <audio src="./audio/gen_bach.arp_Baseline_0.mp3">Not Supported</audio>
+  </body>
+</html>
